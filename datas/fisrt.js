@@ -31,5 +31,9 @@
   titre: "Detail",
   nomApp:"Detail"
 },
+{ id: 7,
+  titre: "ecommerce",
+  nomApp:"Appecommerce"
+},
 
  ];
