@@ -1,13 +1,21 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+
+//Importation de NavigationContainer.
 import {NavigationContainer} from '@react-navigation/native';
+
+//Importation de createStackNavigator
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+//Importation des différentes pages de navigation de l'application.
 import FirstScreen from './Allapps/First';
 import AppNewScreen from './Allapps/AppNews';
 import Insta from './Allapps/Insta';
 import Tuto from './Allapps/TutoFlatList';
 
+//Importation e-commerce
 import ecommerce from './ecommerce';
+
 //importation du fournisseur store.
 import store from './redux/store';
 

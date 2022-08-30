@@ -1,7 +1,10 @@
 import { StyleSheet, Text, View,Button} from 'react-native'
 import React from 'react';
+
+//Importation de useDispacth.
 import {useDispatch} from'react-redux';
 
+//importation editLogin.
 import{editLogin} from '../../redux/action';
 
 
@@ -15,6 +18,7 @@ const Private = () => {
     console.log("deconnexion")
   }
   return (
+    //Création du bouton de déconnexion, avec une couleur, texte de déconnexion..
     <View>
       
       <Text>Deconnexion</Text>
