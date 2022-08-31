@@ -7,8 +7,9 @@ const initStateNombre=0;
 
 //Exportation default.
 export default function(state=initStateNombre,action){
+   
          console.log(action.payload, state);
-         
+
             switch(action.type){
 
             case EDIT_NOMBRE:{
