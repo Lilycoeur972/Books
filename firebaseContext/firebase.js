@@ -11,7 +11,7 @@ class Firebase{
     }
 
  // Création de la fonction getCatégorie. Récupération des documents de la catégorie.
-    getCategories=()=> this.firestore.collection("Categories")
+    getCategories=()=> this.firestore.collection("Categories").get();
 }
 
 export default Firebase;
