@@ -37,9 +37,13 @@
       nomApp:"Detail"
     },
 
-    { id: 7,
+    { id: 8,
       titre: "ecommerce",
       nomApp:"Appecommerce"
     },
 
+    { id: 9,
+      titre: "App Tuto Fire List",
+      nomApp:"AppTutoFireList"
+    },
  ];
