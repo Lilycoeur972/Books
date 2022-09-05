@@ -69,8 +69,8 @@ const Stack = createNativeStackNavigator();
           <Stack.Screen name="AppInsta" component={Insta} />
           <Stack.Screen name="AppTuto" component={Tuto} />
 
-          {/* E-commerce app Screen*/ }
-          <Stack.Screen name="Appecommerce" component={ecommerce}/>
+          {/* E-commerce app Screen. Cacher l'entête */ }
+          <Stack.Screen name="Appecommerce" options={{headerShown:false}} component={ecommerce}/>
 
           {/*TutoFireList */}
           <Stack.Screen name="AppTutoFireList" component={TutoFireList}/>

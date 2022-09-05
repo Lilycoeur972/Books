@@ -1,34 +1,21 @@
-import { View, Text } from 'react-native';
-import React from 'react';
+import * as React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Home from './Screen/Home';
+import Setting from './Screen/Setting';
 
-// Importation de Connexion.
-import Connexion from './Public/Connexion';
 
-//Importation Private.
-import Private from'./Private';
 
-// Importation de useSelector.
-import {useSelector} from 'react-redux';
+const Tab = createBottomTabNavigator();
 
-const Index= () => {
-
-    
-
-    //Récupération de la variable qui est dans le state.
-
-     const {login}= useSelector(state=>state)
-
+export default function App() {
   return (
-    
-  //Affichage de la connexion: si le login est faux allé dans private.
-    <View>
+     /*Cacher les entêtes :.  */
+      <Tab.Navigator screenOptions={{headerShown:false}}>
+       
         
-      {!login? <Connexion/>:
-      <Private/>}
-
-      
-    </View>
-  )
+        <Tab.Screen  name="Accueil" component={Home} />
+        <Tab.Screen name="Mon Compte" component={Setting} />
+      </Tab.Navigator>
+  
+  );
 }
-
-export default Index
