@@ -1,19 +1,13 @@
 import { StyleSheet, Text, View, FlatList } from 'react-native'
 import React from 'react'
 import { TouchableOpacity } from 'react-native-gesture-handler';
-
-// Création de la constance data.
-
-const data=[{id:1,nom:"cat1"},
-            {id:2,nom:"cat2"},
-            {id:3,nom:"cat3"},
-            {id:4,nom:"cat4"},
-            {id:5,nom:"cat5"},
-            {id:6,nom:"cat6"}];
+import { useSelector } from 'react-redux';
 
 
      // Création de la constance RenderCatégorie.
     const RenderCategorie=({categorie})=>{
+
+        
 
         return (
 
@@ -30,6 +24,11 @@ const data=[{id:1,nom:"cat1"},
 
 
         const Categories = () => {
+        // Création de la constance dataCategorie.
+             const {dataCategorie}= useSelector(state=>state);
+
+             console.log("dataCategorie", dataCategorie);
+
         return (
 
             /* Création du style de la view. */
@@ -40,7 +39,7 @@ const data=[{id:1,nom:"cat1"},
 
             {/* Création de la FlaTist. */}
             <FlatList
-            data={data}
+            data={dataCategorie}
             horizontal={true}
             renderItem={({item})=><RenderCategorie categorie={item}/>}
             keyExtractor={item=>item.id}
@@ -71,7 +70,7 @@ const styles = StyleSheet.create({
         backgroundColor:'red',
         margin:10,
         padding:10,
-        width:60,
+        width:110,
         borderRadius:5,
         height:40,
     }, 

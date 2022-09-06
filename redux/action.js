@@ -1,7 +1,7 @@
 //Importation de l'action EDIT_LOGIN.
 import login from "./reducers/login";
 import nombre from "./reducers/nombre";
-import { EDIT_LOGIN,EDIT_NOMBRE } from "./type";
+import { ADD_CATEGORIE, EDIT_LOGIN,EDIT_NOMBRE } from "./type";
 
 
 
@@ -15,4 +15,11 @@ export const editLogin=(login)=>({
 export const editNombre=(nombre)=>({
     type:EDIT_NOMBRE,
     payload:nombre
+})
+// Reçoit les catégories.
+export const addCategorie=(categorie)=>({
+    
+    //Création du type et de l'action.
+ type:ADD_CATEGORIE,
+ payload: categorie
 })
