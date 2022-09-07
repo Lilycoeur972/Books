@@ -3,10 +3,15 @@ import React from 'react'
 
 import Categories from '../Components/Categories';
 
+//importation article
+
+import Articles from '../Components/Articles';
+
 const Home = () => {
   return (
     <View style={styles.content}>
       <Categories/>
+      <Articles/>
     </View>
   )
 }

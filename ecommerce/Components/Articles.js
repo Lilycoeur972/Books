@@ -5,17 +5,17 @@ import { useSelector } from 'react-redux';
 
 
      // Création de la constance RenderCatégorie.
-    const RenderCategorie=({categorie})=>{
+    const RenderArticle=({article})=>{
 
         
 
         return (
 
          // Bouton TouchableOpacity avec style+ texte.
-            <TouchableOpacity style={styles.touchCategorie}>
+            <TouchableOpacity style={styles.touchArticle}>
 
                 {/*Application du style de texte catégorie */}
-                <Text style={styles.textCategorie}>{categorie.nom}
+                <Text style={styles.textArticle}>{article.Nom}
                 </Text>
 
             </TouchableOpacity>
@@ -23,11 +23,11 @@ import { useSelector } from 'react-redux';
     }
 
 
-        const Categories = () => {
+        const Article = () => {
         // Création de la constance dataCategorie.
-             const {dataCategorie}= useSelector(state=>state);
+             const {dataArticle}= useSelector(state=>state);
 
-             console.log("dataCategorie", dataCategorie);
+             console.log("dataCategorie", dataArticle);
 
         return (
 
@@ -35,13 +35,15 @@ import { useSelector } from 'react-redux';
             <View style={styles.content}>
 
            {/*Création du style du titre. */} 
-            <Text style={styles.title}>Categories</Text>
+            <Text style={styles.title}>Articles</Text>
 
             {/* Création de la FlatList de la catégorie. */}
             <FlatList
-            data={dataCategorie}
-            horizontal={true}
-            renderItem={({item})=><RenderCategorie categorie={item}/>}
+            data={dataArticle}
+            horizontal={false}
+            //Nombre de colognes.
+            numColumns={2}
+            renderItem={({item})=><RenderArticle article={item}/>}
             keyExtractor={item=>item.id}
             />
             
@@ -50,15 +52,13 @@ import { useSelector } from 'react-redux';
         )
         }
 
-export default Categories
+export default Article
 
 
 const styles = StyleSheet.create({
 
     content:{
-        width:"100%",
-       // backgroundColor:'red',
-        height:100,
+       flex:1
     },
 
   // Style du titre.
@@ -68,17 +68,17 @@ const styles = StyleSheet.create({
     },
 
     //Bouton toucher 
-    touchCategorie:{
+    touchArticle:{
         backgroundColor:'red',
         margin:10,
         padding:10,
-        width:110,
-        borderRadius:5,
-        height:40,
+        width:160,
+        borderRadius:15,
+        height:200,
     }, 
 
     // style du texte Catégorie.
-    textCategorie:{
+    textArticle:{
         fontSize:18,
         color:"#fff",
         fontWeight:"500"
