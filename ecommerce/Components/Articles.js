@@ -1,18 +1,24 @@
-import { StyleSheet, Text, View, FlatList } from 'react-native'
+import { StyleSheet, Text, View, FlatList ,TouchableOpacity } from 'react-native'
 import React from 'react'
-import { TouchableOpacity } from 'react-native-gesture-handler';
+
 import { useSelector } from 'react-redux';
+import { useNavigation } from '@react-navigation/native';
 
 
      // Création de la constance RenderCatégorie.
     const RenderArticle=({article})=>{
-
         
+        //Création de la constance navigation 
+        const navigation= useNavigation();
 
+        //Création du bouton  onPressArticle
+        const onPressArticle=()=>{
+          navigation.navigate("Detailarticle", {id: article.id})
+        }
         return (
 
          // Bouton TouchableOpacity avec style+ texte.
-            <TouchableOpacity style={styles.touchArticle}>
+            <TouchableOpacity  onPress={onPressArticle} style={styles.touchArticle}>
 
                 {/*Application du style de texte catégorie */}
                 <Text style={styles.textArticle}>{article.Nom}
@@ -41,6 +47,7 @@ import { useSelector } from 'react-redux';
             <FlatList
             data={dataArticle}
             horizontal={false}
+            
             //Nombre de colognes.
             numColumns={2}
             renderItem={({item})=><RenderArticle article={item}/>}

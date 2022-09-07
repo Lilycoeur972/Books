@@ -4,8 +4,7 @@ import React from 'react';
 //Importation de NavigationContainer.
 import {NavigationContainer} from '@react-navigation/native';
 
-//Importation de createStackNavigator
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
 
 //Importation des différentes pages de navigation de l'application.
 import FirstScreen from './Allapps/First';
@@ -31,6 +30,8 @@ import TutoFireList from'./Allapps/TutoFireList';
 //Importation index.js.
 import index from'./Allapps/TutoFireList';
 
+//  Importation de createNativeStackNavigation 
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 /* Importation de DetailScren. 
 import DetailScreen from './Detail/Detail';*/
@@ -74,6 +75,8 @@ const Stack = createNativeStackNavigator();
 
           {/*TutoFireList */}
           <Stack.Screen name="AppTutoFireList" component={TutoFireList}/>
+          
+          
         </Stack.Navigator>
 
       </NavigationContainer>

@@ -13,11 +13,26 @@ import {useEffect} from 'react';
 import { useDispatch } from 'react-redux';
 
 // Importation de l'action ADD_CATEGORIE.
+//Importation de createStackNavigator
 
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
+// importation de detailartiticle
+import Detailarticle from './Screen/Detailarticle';
 import {addArticle, addCategorie} from'../redux/action';
 
 const Tab = createBottomTabNavigator();
+//Creation 
+const Stack= createNativeStackNavigator();
+
+const Accueil=()=>{
+  return(
+    <Stack.Navigator>
+      <Stack.Screen name='Accueil'component={Home}/>
+      <Stack.Screen name='Detailarticle'component={Detailarticle}/>
+    </Stack.Navigator>
+  )
+}
 
 const App = () => {
 
@@ -93,7 +108,7 @@ const App = () => {
   return (
     /*Cacher les entêtes :.  */
     <Tab.Navigator screenOptions={{headerShown: false}}>
-      <Tab.Screen name="Accueil" component={Home} />
+      <Tab.Screen name="Accueil" component={Accueil} />
       <Tab.Screen name="Mon Compte" component={Setting} />
     </Tab.Navigator>
   );
