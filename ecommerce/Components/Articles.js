@@ -3,6 +3,8 @@ import React from 'react'
 
 import { useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
+import { Image } from 'react-native';
+
 
 
      // Création de la constance RenderCatégorie.
@@ -21,8 +23,9 @@ import { useNavigation } from '@react-navigation/native';
             <TouchableOpacity  onPress={onPressArticle} style={styles.touchArticle}>
 
                 {/*Application du style de texte catégorie */}
-                <Text style={styles.textArticle}>{article.Nom}
-                </Text>
+                <Text style={styles.textArticle}>{article.Nom}</Text>
+                <Image source={{uri: article.Image}} style={styles.image}/>
+               
 
             </TouchableOpacity>
         )
@@ -89,6 +92,12 @@ const styles = StyleSheet.create({
         fontSize:18,
         color:"#fff",
         fontWeight:"500"
+    },
+    // Style d'image 
+    image:{
+        width: 150,
+        height:150,
+
     }
 
 })

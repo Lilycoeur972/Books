@@ -9,56 +9,67 @@ import {FirebaseContext} from '../firebaseContext';
 
 import {useEffect} from 'react';
 
-//Importation de useDispatch.
+{/*Importation de useDispatch.*/}
 import { useDispatch } from 'react-redux';
 
-// Importation de l'action ADD_CATEGORIE.
-//Importation de createStackNavigator
-
+{/*Importation de createStackNavigator.*/}
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-// importation de detailartiticle
+{/* importation de detailartiticle.*/}
 import Detailarticle from './Screen/Detailarticle';
+
+{/*Importation de addArticle; addCategorie. */}
 import {addArticle, addCategorie} from'../redux/action';
 
+{/*Importation de Panier*/}
+import Panier from './Screen/Panier';
+
 const Tab = createBottomTabNavigator();
-//Creation 
+
+{/*Creation de la constance Stack.*/}
 const Stack= createNativeStackNavigator();
 
+{/* Création de la constance Accueil.*/}
 const Accueil=()=>{
+
   return(
+    /*Création de la Stack Navigator. */
     <Stack.Navigator>
       <Stack.Screen name='Accueil'component={Home}/>
-      <Stack.Screen name='Detailarticle'component={Detailarticle}/>
+      <Stack.Screen name='Detailarticle'component={Detailarticle}/>  
+      
     </Stack.Navigator>
   )
 }
 
 const App = () => {
 
-// Création de la constance dispacth.
+{/*Création de la constance dispacth.*/}
   const dispacth = useDispatch();
 
-  /*Création de la constance first*/
+  {/*Création de la constance first*/}
   const firebase = useContext(FirebaseContext);
 
-  // Création d'une constance intérmédiaire.
+  {/* Création d'une constance intérmédiaire.*/}
   const initCategories = async () => {
 
     const categories = await firebase.getCategories(); 
-   // console.log("categories.empty:",categories.empty);
-    // Si Résultat afficher
-    if (!categories.empty) {
-      //console.log("categories.empty:",categories.empty);
+  { /* console.log("categories.empty:",categories.empty).*/}
 
-      // Boucler sur les catégories.
+    {/* Si Résultat afficher.*/}
+    if (!categories.empty) {
+      {/*console.log("categories.empty:",categories.empty).*/}
+
+      {/* Boucler sur les catégories.*/}
       categories.forEach(categorieData=>{
-      //  console.log("categorieData.id:", categorieData.id);
+
+      {/*  console.log("categorieData.id:", categorieData.id).*/}
         const tempCategorie={id:categorieData.id,
                             ...categorieData.data()}
 
                             console.log(tempCategorie)
-                           // addCategorie(tempCategorie) ;
+                           // addCategorie(tempCategorie).
+
        dispacth(addCategorie(tempCategorie))
         
         
@@ -110,6 +121,8 @@ const App = () => {
     <Tab.Navigator screenOptions={{headerShown: false}}>
       <Tab.Screen name="Accueil" component={Accueil} />
       <Tab.Screen name="Mon Compte" component={Setting} />
+      <Tab.Screen name="Panier" component={Panier}/>
+      
     </Tab.Navigator>
   );
 
