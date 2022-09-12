@@ -4,6 +4,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 import { Image } from 'react-native';
+import { styles } from '../../Allapps/theme/styles';
 
 
 
@@ -41,10 +42,10 @@ import { Image } from 'react-native';
         return (
 
             /* Création du style de la view. */
-            <View style={styles.content}>
+            <View style={styles.articleContent}>
 
            {/*Création du style du titre. */} 
-            <Text style={styles.title}>Articles</Text>
+            <Text style={styles.articleTitle}>Articles</Text>
 
             {/* Création de la FlatList de la catégorie. */}
             <FlatList
@@ -65,40 +66,3 @@ import { Image } from 'react-native';
 export default Article
 
 
-const styles = StyleSheet.create({
-
-    content:{
-       flex:1
-    },
-
-  // Style du titre.
-    title:{
-        fontSize:25,
-        fontWeight:'600',
-    },
-
-    //Bouton toucher 
-    touchArticle:{
-        backgroundColor:'red',
-        margin:10,
-        padding:10,
-        width:160,
-        borderRadius:15,
-        height:200,
-    }, 
-
-    // style du texte Catégorie.
-    textArticle:{
-        fontSize:18,
-        color:"#fff",
-        fontWeight:"500"
-    },
-    
-    // Style d'image 
-    image:{
-        width: 150,
-        height:150,
-
-    }
-
-})

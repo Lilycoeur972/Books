@@ -10,6 +10,10 @@ import Categories from '../Components/Categories';
 {/*importation article.*/}
 import Articles from '../Components/Articles';
 
+//Importation du style
+
+import { styles } from '../../Allapps/theme/styles';
+
 {/*Création de la constante Home. */}
 const Home = () => {
 
@@ -25,10 +29,10 @@ const Home = () => {
 
 export default Home
 
-const styles = StyleSheet.create({
+/*const styles = StyleSheet.create({
     content:{flex:1,
     //backgroundColor:'red',
     margin:10,
     
     }
-})
+})*/
