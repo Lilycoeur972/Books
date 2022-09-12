@@ -16,6 +16,7 @@ export const editNombre=(nombre)=>({
     type:EDIT_NOMBRE,
     payload:nombre
 })
+
 // Reçoit les catégories.
 export const addCategorie = (categorie)=>({
     
@@ -31,6 +32,7 @@ export const addArticle = (article)=>({
     type:ADD_ARTICLE,
     payload: article,
 })
+
 // Création de addPanier.action 
 export const addPanier = (article)=>({
     
@@ -38,7 +40,8 @@ export const addPanier = (article)=>({
     type:ADD_PANIER,
     payload: article,
 })
-// Création de l'action remove-one
+
+// Création de l'action remove-onePanier
 export const removeOnePanier= (panier)=>({
     
     //Création du type et de l'action.

@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
         color:"#fff",
         fontWeight:"500"
     },
+    
     // Style d'image 
     image:{
         width: 150,

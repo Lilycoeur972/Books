@@ -20,6 +20,7 @@ export default function(state= initStateArticle,action ){
 
             //Destructuring ARTICLE à partir de state. Action .payload correspond à la valeur dans le dispacht.c
             return !existItem(state,action.payload.id)?[...state,action.payload]:state;
+            
             //return [...state,action.payload];
 
         } else{

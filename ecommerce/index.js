@@ -87,6 +87,7 @@ const App = () => {
   const initArticles = async () => {
 
     const articles = await firebase.getArticles();
+    
     // Si Résultat afficher
     if (!articles.empty) {
 
@@ -117,6 +118,7 @@ const App = () => {
   }, []);
 
   return (
+
     /*Cacher les entêtes :.  */
     <Tab.Navigator screenOptions={{headerShown: false}}>
       <Tab.Screen name="Accueil" component={Accueil} />

@@ -12,7 +12,9 @@ import Articles from '../Components/Articles';
 
 {/*Création de la constante Home. */}
 const Home = () => {
+
   return (
+    
     /*Création du style de la view. */
     <View style={styles.content}>
       <Categories/>

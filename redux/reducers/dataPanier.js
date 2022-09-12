@@ -1,6 +1,5 @@
 import {existItem} from '../../Allapps/common/fonction';
-import {ADD_CATEGORIE, ADD_PANIER, REMOVE_PANIER, REMOVE_ONE_PANIER
-} from '../type';
+import {ADD_CATEGORIE, ADD_PANIER, REMOVE_PANIER, REMOVE_ONE_PANIER} from '../type';
 
 //initailisation de l'état initiale de panier dans un tableau de valeur à vide pour débuter..
 const initStatePanier = [];
@@ -17,6 +16,7 @@ export default function (state = initStatePanier, action) {
   //Mise à jour de l'action ADD_PANIER
 
    if (action.type==ADD_PANIER){
+    
     console.log('reducer', action.payload);
 
            //Destructuring catégorie à partir de state. Action .payload correspond à la valeur dans le dispacht.c
@@ -40,7 +40,10 @@ export default function (state = initStatePanier, action) {
          
          /*Retourner tous les éléments qui n'ont pas cet identifiant. */
          return state.filter(item=>item.id!=action.payload.id)
+
         } else{
+
+
             return state;
         }
 }

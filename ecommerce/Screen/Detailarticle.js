@@ -55,7 +55,7 @@ const Detailarticle = ({route}) => {
        setTimeout(()=>{
 
 
-       setArticle({id:id },rqArticle.data());
+       setArticle({id:id,...rqArticle.data()});
        setLoading(false);
 
 

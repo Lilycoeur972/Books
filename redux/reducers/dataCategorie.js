@@ -16,9 +16,12 @@ export default function (state = initStateCategories, action) {
   //Mise à jour de l'action ADD_CATEGORIE
 
    if (action.type==ADD_CATEGORIE){
+
     console.log('reducer', action.payload);
+
            //Destructuring catégorie à partir de state. Action .payload correspond à la valeur dans le dispacht.c
            // Retourne la fonction existItem .
+           
             return !existItem(state,action.payload.id)?[...state,action.payload]:state;
             
 
