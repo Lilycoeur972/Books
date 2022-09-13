@@ -1,13 +1,20 @@
 {/*Importation de firestore. */}
 import firestore from'@react-native-firebase/firestore';
 
+//Importation de auth
+import auth from '@react-native-firebase/auth';
+
 // Création de la classe, orientée objet js.
 class Firebase{
     firestore;
+    auth;
 
  // Création du constructeur de la class.
     constructor(){
             this.firestore = firestore();
+
+            //Preparation du compte sur firebase.
+            this.auth=auth();
     }
 
  // Création de la fonction getCatégorie. Récupération des documents de la catégorie.

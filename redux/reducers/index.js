@@ -20,13 +20,17 @@ import login from "./login";
 //importation de nombre.
 import nombre from './nombre';
 
+//Importation de dataUser
+import dataUser from "./dataUser";
 
 
 
-//Exportation de combineReducers :login , nombre.
+
+//Exportation de combineReducers :login , nombre, dataCategorie, dataArticle, dataPanier 
 export default combineReducers({login, 
                               dataCategorie , 
                               dataArticle ,
                               dataPanier,
+                              dataUser,
                                nombre});
 

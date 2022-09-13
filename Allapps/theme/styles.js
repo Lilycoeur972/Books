@@ -15,9 +15,9 @@ import {colors} from'./colors';
     //Style de la catégorie début
     categorieContent:{
         width:"100%",
-       // backgroundColor:'red',
+        //backgroundColor:'black',
         height:100,
-        color:'black'
+        
         
     },
 
@@ -25,7 +25,7 @@ import {colors} from'./colors';
     categorieTitle:{
         fontSize:25,
         fontWeight:'600',
-       
+       color:'red',
     },
 
     //Bouton toucher 

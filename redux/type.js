@@ -21,3 +21,7 @@ export const REMOVE_PANIER= 'REMOVE_PANIER';
 
 //Exportation REMOVE_ONE-PANIER
 export const REMOVE_ONE_PANIER ='REMOVE_ONE_PANIER';
+
+
+//Exportation EDIT_USER
+export const EDIT_USER ='EDIT_USER';

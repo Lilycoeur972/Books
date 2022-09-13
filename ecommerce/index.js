@@ -19,10 +19,15 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Detailarticle from './Screen/Detailarticle';
 
 {/*Importation de addArticle; addCategorie. */}
-import {addArticle, addCategorie} from'../redux/action';
+import {addArticle, addCategorie, editUser} from'../redux/action';
 
 {/*Importation de Panier*/}
 import Panier from './Screen/Panier';
+
+{/*Importation de MaterialIcons */}
+import MaterialIcons from'react-native-vector-icons/MaterialIcons' ;
+
+import auth from '@react-native-firebase/auth';
 
 const Tab = createBottomTabNavigator();
 
@@ -112,19 +117,56 @@ const App = () => {
 
   // iNITIALISATION DE LA PAGE : chargement de la vue..
 
+  //fonction colbact.
+ const authStateChanged=(user)=>{
+console.log('authStateChanged user',user);
+
+//dispacth editUser
+dispacth(editUser(user))
+ }
    useEffect(() => {
     initCategories();
      initArticles();
+     const subscriber = auth().onAuthStateChanged(authStateChanged);
+     return subscriber; // unsubscribe on unmount
   }, []);
 
   return (
 
     /*Cacher les entêtes :.  */
     <Tab.Navigator screenOptions={{headerShown: false}}>
-      <Tab.Screen name="Accueil" component={Accueil} />
-      <Tab.Screen name="Mon Compte" component={Setting} />
-      <Tab.Screen name="Panier" component={Panier}/>
+      <Tab.Screen name="Accueil" component={Accueil} 
+
+      // Ajout d'icone Accueil
+      options={{
+        tabBarIcon: (tabInfo) => (
+          <MaterialIcons name="home" size={18} color={tabInfo.tintColor} />
+        ),
+      }}
       
+      />
+      <Tab.Screen name="Mon Compte" component={Setting} 
+
+       //Ajout d'icône Mon compte
+      /* options={{
+        tabBarIcon:(tabBarIcon)=>(
+          <MaterialIcons name="lo" size={18} color={tabIbfo.tintColor}/>
+        ),
+       }}
+      */
+      />
+
+      <Tab.Screen name="Panier" component={Panier}
+
+     // Ajout d'icone Panier
+      options={{
+        tabBarIcon:(tabInfo)=>(
+          <MaterialIcons name="shopping-cart" size={18} color={tabInfo.tintColor}/>
+        ),
+      }}
+      />
+      
+
     </Tab.Navigator>
   );
 

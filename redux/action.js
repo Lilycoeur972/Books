@@ -1,7 +1,7 @@
 //Importation de l'action EDIT_LOGIN.
 import login from "./reducers/login";
 import nombre from "./reducers/nombre";
-import { ADD_ARTICLE, ADD_CATEGORIE, ADD_PANIER, EDIT_LOGIN,EDIT_NOMBRE, REMOVE_PANIER,REMOVE_ONE_PANIER } from "./type";
+import { ADD_ARTICLE, ADD_CATEGORIE, ADD_PANIER, EDIT_LOGIN,EDIT_NOMBRE, REMOVE_PANIER,REMOVE_ONE_PANIER, EDIT_USER } from "./type";
 
 
 
@@ -53,4 +53,10 @@ export const removeOnePanier= (panier)=>({
 export const removePanier =(panier)=>({
     type: REMOVE_PANIER,
     payload :[]
+})
+
+// creation EDIT USER.
+export const editUser =(user)=>({
+    type: EDIT_USER,
+    payload :[user]
 })
